@@ -38,25 +38,34 @@ android {
         dataBinding = true
     }
 }
-
 dependencies {
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
     implementation("com.squareup.moshi:moshi:1.15.0")
     implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
-    implementation(libs.androidx.recyclerview)
-    implementation(libs.glide)
-    implementation(libs.retrofit)
-    implementation(libs.converter.moshi)
-    implementation(libs.kotlinx.coroutines.core)
-    implementation(libs.kotlinx.coroutines.android)
     kapt(libs.moshi.kotlin.codegen)
-    implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.activity)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.glide)
+
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

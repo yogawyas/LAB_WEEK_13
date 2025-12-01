@@ -22,6 +22,9 @@ class MovieApplication : Application() {
         val movieService = retrofit.create(MovieService::class.java)
 
         // create a MovieRepository instance
-        movieRepository = MovieRepository(movieService)
+        movieRepository = MovieRepository(
+            movieService,
+            movieDatabase = TODO()
+        )
     }
 }
