@@ -1,0 +1,22 @@
+1. Why is MVVM important, and which files represent Model, View, and ViewModel?
+
+MVVM is important because it separates the application’s data, logic, and user interface, making the code easier to maintain, test, and scale. In this project, the Model is represented by the data-related classes such as Movie, MovieDao, MovieDatabase, and MovieRepository. The View consists of UI components like MainActivity and the XML layout files. The ViewModel is represented by the MovieViewModel, which acts as a bridge between the View and the Model by preparing and managing data for the UI.
+
+
+2. Why is Data Binding more efficient than the normal method?
+
+Data Binding is more efficient because it directly connects UI components to data sources, removing the need for repetitive findViewById calls. It reduces boilerplate code, minimizes errors, and updates the UI automatically when the underlying data changes. This creates a cleaner and more responsive connection between the View and the ViewModel.
+
+
+3. Why is the Singleton Pattern important?
+
+The Singleton Pattern is important because it ensures that certain components—such as the database or repository—have only one instance throughout the entire application. This prevents unnecessary duplication, reduces memory usage, and avoids conflicts that can occur when multiple objects try to access the same resources at the same time.
+
+
+4. Why is the Repository Pattern important?
+
+The Repository Pattern is valuable because it abstracts the data sources and provides a clean API for the rest of the app. This means the ViewModel does not need to know whether the data comes from an API or a local database. It makes the architecture more organized, easier to maintain, and more flexible when changing or adding data sources in the future.
+
+5. Besides using WorkManager, is there another way to refresh the database automatically?
+
+Yes, there are other ways to refresh the database. For example, the app could refresh data whenever the user performs a manual action such as opening the app or pulling to refresh. The system could also use AlarmManager or a foreground service to trigger periodic updates. However, WorkManager is the most suitable option for reliable background tasks because it automatically handles constraints like network availability and device idle states.
